@@ -25,6 +25,8 @@ This demonstration shows how to perform the basic tasks needed to get a Toolkit 
 }
 ```
 
+We import `jsplumbtoolkit` and `jsplumbtoolkit-angular`, which you'll want to do for any application using the Angular integration. We also import `jsplumbtoolkit-demo-support`, which just contains a couple of helper methods for the Toolkit demonstrations, and is not something we expect licensees to use in their own applications.
+
 <a id="setup"></a>
 ### Setup
 
