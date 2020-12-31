@@ -29,16 +29,25 @@ jsplumb-surface {
     padding:7px;
 }
 
-.jtk-node button {
-    margin:10px;
-    background:transparent;
-    outline:none;
-    cursor:pointer;
-    border:1px solid #CCC;
-    border-radius:3px;
+.jtk-node {
+    width:100px;
+    color:white;
+    text-align: center;
+    padding:7px;
+    border:1px solid #ccc;
+    background-color:#2b81af;
 }
 
-.jtk-node button:hover {
-    color:white;
-    background-color:orangered;
+.jtk-node button{
+    margin:10px;
+    outline:none;
+    cursor:pointer;
+    border:1px solid #ccc;
+    border-radius:3px
 }
+
+.jtk-node button:hover{
+    color:#fff;
+    background-color:#ff4500;
+}
+
