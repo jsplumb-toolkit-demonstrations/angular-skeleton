@@ -22,7 +22,7 @@
     "zone.js": "~0.10.2",
     "jsplumbtoolkit": "file:./jsplumbtoolkit.tgz",
     "jsplumbtoolkit-angular": "file:./jsplumbtoolkit-angular.tgz",
-    "jsplumbtoolkit-demo-support": "file:./jsplumbtoolkit-demo-support.tgz"
+    "@jsplumb/toolkit-demo-support": "^1.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",

@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/jsplumbtoolkit/dist/css/jsplumbtoolkit.css';
-@import "../node_modules/jsplumbtoolkit-demo-support/dist/css/jsplumbtoolkit-demo-support.css";
+@import "../node_modules/@jsplumb/toolkit-demo-support/jsplumbtoolkit-demo-support.css";
 
 app-root {
     width:100%;
