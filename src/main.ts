@@ -4,14 +4,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { jsPlumbToolkit } from "jsplumbtoolkit";
+import { ready } from "@jsplumbtoolkit/browser-ui";
 
 if (environment.production) {
   enableProdMode();
 }
 
 
-jsPlumbToolkit.ready(()=> {
+ready(()=> {
   platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.error(err));
 })

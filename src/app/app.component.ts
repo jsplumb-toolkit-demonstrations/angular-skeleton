@@ -3,8 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import { ShinBoneComponent } from './shin-bone-component';
 import { KneeBoneComponent } from './knee-bone-component';
 
-import { jsPlumbToolkit, jsPlumbToolkitOptions, ViewOptions, SurfaceRenderParams } from 'jsplumbtoolkit';
-import { jsPlumbSurfaceComponent, jsPlumbService } from 'jsplumbtoolkit-angular';
+import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
+import {BrowserUI, SurfaceRenderOptions, SurfaceViewOptions} from '@jsplumbtoolkit/browser-ui'
+import { jsPlumbSurfaceComponent, jsPlumbService } from '@jsplumbtoolkit/angular';
 
 /**
  * This app was created with create-react-app.  AppComponent is the entry point.
@@ -20,10 +21,10 @@ export class AppComponent {
   @ViewChild(jsPlumbSurfaceComponent) surfaceComponent:jsPlumbSurfaceComponent;
 
   // these are plugged in to the Surface component.
-  surfaceId = "example";
-  toolkitId = "example";
+  surfaceId = "example"
+  toolkitId = "example"
 
-  toolkit:jsPlumbToolkit;
+  toolkit:BrowserUI
 
   constructor(private $jsplumb:jsPlumbService) {}
 
@@ -33,11 +34,11 @@ export class AppComponent {
   }
 
   // Empty in this demonstration.
-  toolkitParams:jsPlumbToolkitOptions = {};
+  toolkitParams:JsPlumbToolkitOptions = {};
 
   // the view in this demonstration declares a component to use to render each node type, and the appearance and behaviour of
   // a single edge type.
-  view:ViewOptions = {
+  view:SurfaceViewOptions = {
     nodes:{
       "shin":{
         component:ShinBoneComponent
@@ -51,9 +52,9 @@ export class AppComponent {
         connector:"Straight",
         anchor:"Continuous",
         overlays:[
-          [ "Label", { location:0.5, label:"${label}"}],
-          [ "Arrow", { location:1} ],
-          [ "Arrow", {location:0, direction:-1}]
+          { type:"Label", options:{ location:0.5, label:"${label}"}},
+          { type:"Arrow", options:{ location:1} },
+          { type:"Arrow", options:{location:0, direction:-1}}
         ],
         endpoint:"Blank"
       }
@@ -61,7 +62,7 @@ export class AppComponent {
   };
 
   // we use a Spring layout, and we enable right-click on the canvas. on data load, we zoom the canvas to show all the data.
-  renderParams:SurfaceRenderParams = {
+  renderParams:SurfaceRenderOptions = {
     layout:{
       type:"Spring"
     },
