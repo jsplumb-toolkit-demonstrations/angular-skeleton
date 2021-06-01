@@ -6,6 +6,11 @@ import { KneeBoneComponent } from './knee-bone-component';
 import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
 import {BrowserUI, SurfaceRenderOptions, SurfaceViewOptions} from '@jsplumbtoolkit/browser-ui'
 import { jsPlumbSurfaceComponent, jsPlumbService } from '@jsplumbtoolkit/angular';
+import {StraightConnector, AnchorLocations, LabelOverlay, ArrowOverlay, BlankEndpoint, DEFAULT} from '@jsplumb/core'
+import {SpringLayout} from "@jsplumbtoolkit/layout-spring"
+
+const SHIN = "shin"
+const KNEE = "knee"
 
 /**
  * This app was created with create-react-app.  AppComponent is the entry point.
@@ -40,23 +45,23 @@ export class AppComponent {
   // a single edge type.
   view:SurfaceViewOptions = {
     nodes:{
-      "shin":{
+      [SHIN]:{
         component:ShinBoneComponent
       },
-      "knee":{
+      [KNEE]:{
         component:KneeBoneComponent
       }
     },
     edges:{
-      "default":{
-        connector:"Straight",
-        anchor:"Continuous",
+      [DEFAULT]:{
+        connector:StraightConnector.type,
+        anchor:AnchorLocations.Continuous,
         overlays:[
-          { type:"Label", options:{ location:0.5, label:"${label}"}},
-          { type:"Arrow", options:{ location:1} },
-          { type:"Arrow", options:{location:0, direction:-1}}
+          { type:LabelOverlay.type, options:{ location:0.5, label:"${label}"}},
+          { type:ArrowOverlay.type, options:{ location:1} },
+          { type:ArrowOverlay.type, options:{location:0, direction:-1}}
         ],
-        endpoint:"Blank"
+        endpoint:BlankEndpoint.type
       }
     }
   };
@@ -64,7 +69,7 @@ export class AppComponent {
   // we use a Spring layout, and we enable right-click on the canvas. on data load, we zoom the canvas to show all the data.
   renderParams:SurfaceRenderOptions = {
     layout:{
-      type:"Spring"
+      type:SpringLayout.type
     },
     zoomToFit:true,
     consumeRightClick:false
@@ -75,8 +80,8 @@ export class AppComponent {
     this.toolkit.load({
       data:{
         nodes:[
-          { id:"1", type:"shin" },
-          { id:"2", type:"knee" }
+          { id:"1", type:SHIN },
+          { id:"2", type:KNEE }
         ],
         edges:[
           { source:"1", target:"2", data:{label:"isConnectedTo"}}

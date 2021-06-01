@@ -20,9 +20,9 @@
     "rxjs-compat": "^6.0.0-rc.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
-    "@jsplumbtoolkit/core": "file:./jsplumbtoolkit-core.tgz",
-    "@jsplumbtoolkit/browser-ui": "file:./jsplumbtoolkit-browser-ui.tgz",
-    "@jsplumbtoolkit/angular": "file:./jsplumbtoolkit-angular.tgz",
+    "@jsplumbtoolkit/browser-ui": "^5.0.0-RC1",
+    "@jsplumbtoolkit/angular": "^5.0.0-RC1",
+    "@jsplumbtoolkit/layout-spring": "^5.0.0-RC1",
     "@jsplumb/toolkit-demo-support": "^1.0.0"
   },
   "devDependencies": {
