@@ -4,9 +4,8 @@ import { ShinBoneComponent } from './shin-bone-component';
 import { KneeBoneComponent } from './knee-bone-component';
 
 import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
-import {BrowserUI, SurfaceRenderOptions, SurfaceViewOptions} from '@jsplumbtoolkit/browser-ui'
+import {BrowserUI, SurfaceRenderOptions, SurfaceViewOptions, StraightConnector, AnchorLocations, LabelOverlay, ArrowOverlay, BlankEndpoint, DEFAULT} from '@jsplumbtoolkit/browser-ui'
 import { jsPlumbSurfaceComponent, jsPlumbService } from '@jsplumbtoolkit/angular';
-import {StraightConnector, AnchorLocations, LabelOverlay, ArrowOverlay, BlankEndpoint, DEFAULT} from '@jsplumb/core'
 import {SpringLayout} from "@jsplumbtoolkit/layout-spring"
 
 const SHIN = "shin"
