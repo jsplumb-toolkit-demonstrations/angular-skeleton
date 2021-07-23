@@ -4,9 +4,11 @@ import { ShinBoneComponent } from './shin-bone-component';
 import { KneeBoneComponent } from './knee-bone-component';
 
 import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
-import {BrowserUI, SurfaceRenderOptions, SurfaceViewOptions, StraightConnector, AnchorLocations, LabelOverlay, ArrowOverlay, BlankEndpoint, DEFAULT} from '@jsplumbtoolkit/browser-ui'
-import { jsPlumbSurfaceComponent, jsPlumbService } from '@jsplumbtoolkit/angular';
+import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular} from '@jsplumbtoolkit/browser-ui-angular'
 import {SpringLayout} from "@jsplumbtoolkit/layout-spring"
+import {ArrowOverlay, BlankEndpoint, LabelOverlay, StraightConnector} from "@jsplumb/core"
+import {SurfaceRenderOptions, SurfaceViewOptions} from "@jsplumbtoolkit/browser-ui"
+import { AnchorLocations, DEFAULT } from "@jsplumb/common"
 
 const SHIN = "shin"
 const KNEE = "knee"
@@ -28,7 +30,7 @@ export class AppComponent {
   surfaceId = "example"
   toolkitId = "example"
 
-  toolkit:BrowserUI
+  toolkit:BrowserUIAngular
 
   constructor(private $jsplumb:jsPlumbService) {}
 

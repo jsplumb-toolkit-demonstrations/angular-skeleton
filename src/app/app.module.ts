@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 import { KneeBoneComponent } from './knee-bone-component';
 import { ShinBoneComponent } from './shin-bone-component';
-import { jsPlumbToolkitModule } from "@jsplumbtoolkit/angular";
+import { jsPlumbToolkitModule } from "@jsplumbtoolkit/browser-ui-angular";
 
 @NgModule({
   declarations: [
