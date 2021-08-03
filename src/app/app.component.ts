@@ -6,9 +6,16 @@ import { KneeBoneComponent } from './knee-bone-component';
 import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
 import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular} from '@jsplumbtoolkit/browser-ui-angular'
 import {SpringLayout} from "@jsplumbtoolkit/layout-spring"
-import {ArrowOverlay, BlankEndpoint, LabelOverlay, StraightConnector} from "@jsplumb/core"
-import {SurfaceRenderOptions, SurfaceViewOptions} from "@jsplumbtoolkit/browser-ui"
-import { AnchorLocations, DEFAULT } from "@jsplumb/common"
+import {
+  SurfaceRenderOptions,
+  SurfaceViewOptions,
+  ArrowOverlay,
+  BlankEndpoint,
+  LabelOverlay,
+  StraightConnector,
+  AnchorLocations,
+  DEFAULT
+} from "@jsplumbtoolkit/browser-ui"
 
 const SHIN = "shin"
 const KNEE = "knee"
