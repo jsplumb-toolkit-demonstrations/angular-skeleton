@@ -21,9 +21,9 @@
     "rxjs-compat": "^6.0.0-rc.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
-    "@jsplumbtoolkit/browser-ui-angular": "^5.0.0-RC12",
-    "@jsplumbtoolkit/layout-spring": "^5.0.0-RC12",
-    "@jsplumbtoolkit/browser-ui-plugin-miniview": "^5.0.0-RC12"
+    "@jsplumbtoolkit/browser-ui-angular": "^5.0.0-RC14",
+    "@jsplumbtoolkit/layout-spring": "^5.0.0-RC14",
+    "@jsplumbtoolkit/browser-ui-plugin-miniview": "^5.0.0-RC14"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",
