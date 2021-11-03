@@ -3,8 +3,22 @@ import { Component, ViewChild } from '@angular/core';
 import { ShinBoneComponent } from './shin-bone-component';
 import { KneeBoneComponent } from './knee-bone-component';
 
-import { jsPlumbToolkit, jsPlumbToolkitOptions, ViewOptions, SurfaceRenderParams } from 'jsplumbtoolkit';
-import { jsPlumbSurfaceComponent, jsPlumbService } from 'jsplumbtoolkit-angular';
+import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
+import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular} from '@jsplumbtoolkit/browser-ui-angular'
+import {SpringLayout} from "@jsplumbtoolkit/layout-spring"
+import {
+  SurfaceRenderOptions,
+  SurfaceViewOptions,
+  ArrowOverlay,
+  BlankEndpoint,
+  LabelOverlay,
+  StraightConnector,
+  AnchorLocations,
+  DEFAULT
+} from "@jsplumbtoolkit/browser-ui"
+
+const SHIN = "shin"
+const KNEE = "knee"
 
 /**
  * This app was created with create-react-app.  AppComponent is the entry point.
@@ -20,10 +34,10 @@ export class AppComponent {
   @ViewChild(jsPlumbSurfaceComponent) surfaceComponent:jsPlumbSurfaceComponent;
 
   // these are plugged in to the Surface component.
-  surfaceId = "example";
-  toolkitId = "example";
+  surfaceId = "example"
+  toolkitId = "example"
 
-  toolkit:jsPlumbToolkit;
+  toolkit:BrowserUIAngular
 
   constructor(private $jsplumb:jsPlumbService) {}
 
@@ -33,37 +47,37 @@ export class AppComponent {
   }
 
   // Empty in this demonstration.
-  toolkitParams:jsPlumbToolkitOptions = {};
+  toolkitParams:JsPlumbToolkitOptions = {};
 
   // the view in this demonstration declares a component to use to render each node type, and the appearance and behaviour of
   // a single edge type.
-  view:ViewOptions = {
+  view:SurfaceViewOptions = {
     nodes:{
-      "shin":{
+      [SHIN]:{
         component:ShinBoneComponent
       },
-      "knee":{
+      [KNEE]:{
         component:KneeBoneComponent
       }
     },
     edges:{
-      "default":{
-        connector:"Straight",
-        anchor:"Continuous",
+      [DEFAULT]:{
+        connector:StraightConnector.type,
+        anchor:AnchorLocations.Continuous,
         overlays:[
-          [ "Label", { location:0.5, label:"${label}"}],
-          [ "Arrow", { location:1} ],
-          [ "Arrow", {location:0, direction:-1}]
+          { type:LabelOverlay.type, options:{ location:0.5, label:"${label}"}},
+          { type:ArrowOverlay.type, options:{ location:1} },
+          { type:ArrowOverlay.type, options:{location:0, direction:-1}}
         ],
-        endpoint:"Blank"
+        endpoint:BlankEndpoint.type
       }
     }
   };
 
   // we use a Spring layout, and we enable right-click on the canvas. on data load, we zoom the canvas to show all the data.
-  renderParams:SurfaceRenderParams = {
+  renderParams:SurfaceRenderOptions = {
     layout:{
-      type:"Spring"
+      type:SpringLayout.type
     },
     zoomToFit:true,
     consumeRightClick:false
@@ -74,8 +88,8 @@ export class AppComponent {
     this.toolkit.load({
       data:{
         nodes:[
-          { id:"1", type:"shin" },
-          { id:"2", type:"knee" }
+          { id:"1", type:SHIN },
+          { id:"2", type:KNEE }
         ],
         edges:[
           { source:"1", target:"2", data:{label:"isConnectedTo"}}
