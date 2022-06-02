@@ -8,17 +8,14 @@ import { ShinBoneComponent } from './shin-bone-component';
 import { jsPlumbToolkitModule } from "@jsplumbtoolkit/browser-ui-angular";
 
 @NgModule({
-  declarations: [
-    AppComponent, KneeBoneComponent, ShinBoneComponent // Any components used to render nodes/groups/ports must be declared in the `declarations` array
-  ],
-  entryComponents:[
-    KneeBoneComponent, ShinBoneComponent    // Any components used to render nodes/groups/ports must also be declared in the `entryComponents` array
-  ],
-  imports: [
-    BrowserModule, jsPlumbToolkitModule     // import the jsPlumbToolkitModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  schemas:[ CUSTOM_ELEMENTS_SCHEMA ]    // JSPLUMB requires this
+    declarations: [
+        AppComponent, KneeBoneComponent, ShinBoneComponent // Any components used to render nodes/groups/ports must be declared in the `declarations` array
+    ],
+    imports: [
+        BrowserModule, jsPlumbToolkitModule // import the jsPlumbToolkitModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA] // JSPLUMB requires this
 })
 export class AppModule { }
