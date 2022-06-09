@@ -5,7 +5,7 @@ import { KneeBoneComponent } from './knee-bone-component';
 
 import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
 import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular} from '@jsplumbtoolkit/browser-ui-angular'
-import {SpringLayout} from "@jsplumbtoolkit/layout-spring"
+import {ForceDirectedLayout} from "@jsplumbtoolkit/layout-force-directed"
 import {
   SurfaceRenderOptions,
   SurfaceViewOptions,
@@ -77,7 +77,7 @@ export class AppComponent {
   // we use a Spring layout, and we enable right-click on the canvas. on data load, we zoom the canvas to show all the data.
   renderParams:SurfaceRenderOptions = {
     layout:{
-      type:SpringLayout.type
+      type:ForceDirectedLayout.type
     },
     zoomToFit:true,
     consumeRightClick:false

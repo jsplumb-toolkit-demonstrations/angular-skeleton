@@ -1,6 +1,6 @@
 {
   "name": "angular-skeleton",
-  "version": "0.0.0",
+  "version": "5.8.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,9 +21,9 @@
     "rxjs-compat": "^6.0.0-rc.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4",
-    "@jsplumbtoolkit/browser-ui-angular": "^5.0.0",
-    "@jsplumbtoolkit/layout-spring": "^5.0.0",
-    "@jsplumbtoolkit/browser-ui-plugin-miniview": "^5.0.0"
+    "@jsplumbtoolkit/browser-ui-angular": "^5.8.0",
+    "@jsplumbtoolkit/layout-force-directed": "^5.8.0",
+    "@jsplumbtoolkit/browser-ui-plugin-miniview": "^5.8.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.7",
