@@ -4,7 +4,7 @@ import { ShinBoneComponent } from './shin-bone-component';
 import { KneeBoneComponent } from './knee-bone-component';
 
 import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
-import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular} from '@jsplumbtoolkit/browser-ui-angular'
+import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular, AngularViewOptions } from '@jsplumbtoolkit/browser-ui-angular'
 import {ForceDirectedLayout} from "@jsplumbtoolkit/layout-force-directed"
 import {
   SurfaceRenderOptions,
@@ -51,7 +51,7 @@ export class AppComponent {
 
   // the view in this demonstration declares a component to use to render each node type, and the appearance and behaviour of
   // a single edge type.
-  view:SurfaceViewOptions = {
+  view:AngularViewOptions = {
     nodes:{
       [SHIN]:{
         component:ShinBoneComponent
