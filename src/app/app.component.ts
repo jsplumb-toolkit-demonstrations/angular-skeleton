@@ -51,7 +51,7 @@ export class AppComponent {
 
   // the view in this demonstration declares a component to use to render each node type, and the appearance and behaviour of
   // a single edge type.
-  view:AngularViewOptions = {
+  view = {
     nodes:{
       [SHIN]:{
         component:ShinBoneComponent
