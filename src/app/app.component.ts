@@ -3,10 +3,10 @@ import { Component, ViewChild } from '@angular/core';
 import { ShinBoneComponent } from './shin-bone-component';
 import { KneeBoneComponent } from './knee-bone-component';
 
-import { JsPlumbToolkitOptions} from '@jsplumbtoolkit/core';
 import {jsPlumbSurfaceComponent, jsPlumbService, BrowserUIAngular, AngularViewOptions } from '@jsplumbtoolkit/browser-ui-angular'
-import {ForceDirectedLayout} from "@jsplumbtoolkit/layout-force-directed"
 import {
+  JsPlumbToolkitOptions,
+  ForceDirectedLayout,
   SurfaceRenderOptions,
   SurfaceViewOptions,
   ArrowOverlay,
